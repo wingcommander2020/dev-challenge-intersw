@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TextInput } from "react-native";
 
 export default function App() {
   let clientName = "siggy";
@@ -11,42 +11,59 @@ export default function App() {
           source={require("./assets/cropped-favicon.png")}
         />
       </View>
-      <View style={styles.caption}>
-        {clientName !== "" ? (
-          <Text>
-            Welcome back, <Text style={styles.boldText}>{clientName}</Text>
-          </Text>
-        ) : (
-          ""
-        )}
+      <View style={styles.bodyContainer}>
+        <View style={styles.caption}>
+          {clientName !== "" ? (
+            <Text>
+              Welcome back, <Text style={styles.boldText}>{clientName}</Text>
+            </Text>
+          ) : (
+            ""
+          )}
+        </View>
+        <Text>Username</Text>
+        <TextInput style={styles.nameInput} />
+        <Text>Password</Text>
+        <TextInput style={styles.nameInput} secureTextEntry={true}/>
+        <StatusBar style="auto" />
       </View>
-      <StatusBar style="auto" />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
+    paddingTop: 64,
     backgroundColor: "#fff",
     flexDirection: "column",
-    alignItems: "center",
-    //justifyContent: 'center',
-    //padding: 5
   },
   logo: {
     width: 128,
     height: 128,
   },
   logoContainer: {
-    margin: 10,
-    flex: 1,
-    marginTop: 40,
+    alignItems: "center",
   },
   caption: {
-    flex: 3,
+    paddingBottom: 32,
   },
   boldText: {
     fontWeight: "bold",
+  },
+  nameInput: {
+    borderColor: "gray",
+    width: "100%",
+    borderRadius: 4,
+    flex: 1,
+    width: "50%",
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+  bodyContainer: {
+    paddingTop:64,
+    paddingLeft: 46
   },
 });
