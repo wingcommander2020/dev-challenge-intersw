@@ -1,8 +1,9 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import { StyleSheet, Text, View, Image, TextInput, Pressable } from "react-native";
 
 export default function App() {
   let clientName = "siggy";
+  let text ='';
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
@@ -22,9 +23,21 @@ export default function App() {
           )}
         </View>
         <Text>Username</Text>
-        <TextInput style={styles.nameInput} />
+        
+        <TextInput style={styles.nameInput} autoComplete='username'/>
         <Text>Password</Text>
-        <TextInput style={styles.nameInput} secureTextEntry={true}/>
+        <View style={styles.adjacent}>
+        <TextInput style={styles.passwordInput} secureTextEntry={true} autoComplete='password'/>
+        <Image
+          style={{width:46,height:46, marginLeft:'auto'}}
+          source={require("./assets/eye_con.png")}
+        />
+        </View>
+        <Pressable title="Login" style={styles.loginButton}>
+          <Text style={styles.pressableTitle}>Login</Text>
+        </Pressable>
+
+
         <StatusBar style="auto" />
       </View>
     </View>
@@ -53,17 +66,49 @@ const styles = StyleSheet.create({
   },
   nameInput: {
     borderColor: "gray",
-    width: "100%",
     borderRadius: 4,
-    flex: 1,
-    width: "50%",
     height: 40,
-    margin: 12,
+    margin: 0,
+    marginBottom:16,
     borderWidth: 1,
-    padding: 10,
+    color: 'black',
+    paddingLeft:16
+  },
+  passwordInput:{
+    width: '75%',
+    borderColor: "gray",
+    borderRadius: 4,
+    height: 40,
+    margin: 0,
+    marginBottom:16,
+    borderWidth: 1,
+    color: 'black',
+    paddingLeft:16
   },
   bodyContainer: {
     paddingTop:64,
-    paddingLeft: 46
+    flex:2,
+    paddingLeft: 46,
+    paddingRight: 46
   },
+  loginButton:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 32,
+    borderRadius: 4,
+    elevation: 3,
+    backgroundColor: '#b02424',
+    width: '75%'
+  },
+  pressableTitle:{
+    fontSize: 16,
+    lineHeight: 21,
+    fontWeight: 'bold',
+    letterSpacing: 0.25,
+    color: 'white',
+  },
+  adjacent:{
+    flexDirection: "row",
+  }
 });
