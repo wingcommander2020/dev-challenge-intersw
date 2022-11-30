@@ -5,13 +5,13 @@ import {
   View,
   Image,
   TextInput,
-  Pressable,
+  Pressable
 } from "react-native";
 import { users } from "../Users";
-//import { NavigationContainer } from "@react-navigation/native";
-//import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-export default function LoginView() {
+export default function LoginView({ navigation }) {
     let clientName = "siggy";
     let text = "";
     let name = users[0].name;

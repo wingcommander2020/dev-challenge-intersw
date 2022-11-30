@@ -6,16 +6,19 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  Pressable
 } from "react-native";
-import { TapGestureHandler, RotationGestureHandler } from 'react-native-gesture-handler';
+import { NavigationContainer } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function MainView() {
+export default function MainView({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
+        <Pressable onPress={() => navigation.navigate('menu')}>
         <Ionicons name="menu" size={36} color="#b02424" />
+        </Pressable>
         <Image
           style={styles.logo}
           source={require("../assets/cropped-favicon.png")}
