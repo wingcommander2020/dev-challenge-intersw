@@ -1,1 +1,3 @@
-export default function App(){
+export default function MenuModal() {
+
+}
