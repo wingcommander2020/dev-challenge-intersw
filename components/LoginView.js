@@ -8,8 +8,6 @@ import {
   Pressable
 } from "react-native";
 import { users } from "../Users";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 export default function LoginView({ navigation }) {
   let clientName = "siggy";
