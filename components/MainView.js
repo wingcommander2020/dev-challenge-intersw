@@ -6,7 +6,8 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
-  Pressable
+  Pressable,
+  ScrollView
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
@@ -31,10 +32,36 @@ export default function MainView({ navigation }) {
 
       <View style={styles.carouselContainer}>
         <Text style={{ fontSize: 18, paddingBottom: 16 }}>My Accounts</Text>
-        <View style={styles.accountCard}>
-          <Text style={{ fontSize: 16 }}>Account: {userAccounts[0].account}</Text>
-          <Text style={{ fontSize: 16 }}>Balance: {userAccounts[0].balance} {'\u20A6'}</Text>
-        </View>
+        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          <View style={styles.accountCard}>
+            <Text style={{ fontSize: 16 }}>Account: {userAccounts[0].account}</Text>
+            <Text style={{ fontSize: 16 }}>Balance: {userAccounts[0].balance} {'\u20A6'}</Text>
+          </View>
+          <View style={styles.accountCard}>
+            <Text style={{ fontSize: 16 }}>Account: {userAccounts[0].account}</Text>
+            <Text style={{ fontSize: 16 }}>Balance: {userAccounts[0].balance} {'\u20A6'}</Text>
+          </View>
+          <View style={styles.accountCard}>
+            <Text style={{ fontSize: 16 }}>Account: {userAccounts[0].account}</Text>
+            <Text style={{ fontSize: 16 }}>Balance: {userAccounts[0].balance} {'\u20A6'}</Text>
+          </View>
+          <View style={styles.accountCard}>
+            <Text style={{ fontSize: 16 }}>Account: {userAccounts[0].account}</Text>
+            <Text style={{ fontSize: 16 }}>Balance: {userAccounts[0].balance} {'\u20A6'}</Text>
+          </View>
+          <View style={styles.accountCard}>
+            <Text style={{ fontSize: 16 }}>Account: {userAccounts[0].account}</Text>
+            <Text style={{ fontSize: 16 }}>Balance: {userAccounts[0].balance} {'\u20A6'}</Text>
+          </View>
+          <View style={styles.accountCard}>
+            <Text style={{ fontSize: 16 }}>Account: {userAccounts[0].account}</Text>
+            <Text style={{ fontSize: 16 }}>Balance: {userAccounts[0].balance} {'\u20A6'}</Text>
+          </View>
+          <View style={styles.accountCard}>
+            <Text style={{ fontSize: 16 }}>Account: {userAccounts[0].account}</Text>
+            <Text style={{ fontSize: 16 }}>Balance: {userAccounts[0].balance} {'\u20A6'}</Text>
+          </View>
+        </ScrollView>
       </View>
 
 
@@ -145,10 +172,12 @@ const styles = StyleSheet.create({
     minWidth: 256
   },
   accountCard: {
+    marginTop: 16,
     paddingTop: 16,
     paddingLeft: 16,
+    marginRight: 16,
     height: 90,
-    width: "75%",
+    width: 190,
     backgroundColor: "#f5f4f4",
 
 
