@@ -11,13 +11,15 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+import { users } from "../Users";
 
 export default function MainView({ navigation }) {
+  let userAccounts = users[0].accounts;
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
         <Pressable onPress={() => navigation.navigate('menu')}>
-        <Ionicons name="menu" size={36} color="#b02424" />
+          <Ionicons name="menu" size={36} color="#b02424" />
         </Pressable>
         <Image
           style={styles.logo}
@@ -26,13 +28,13 @@ export default function MainView({ navigation }) {
       </View>
       <View style={styles.bodyContainer}>
       </View>
-      
+
       <View style={styles.carouselContainer}>
-        <Text style={{ fontSize: 18 }}>My Accounts</Text>
-      <View style={styles.accountCard}>
-      <Text style={{ fontSize: 18 }}>Account:</Text>
-      <Text style={{ fontSize: 18 }}>Balance:</Text>
-      </View>
+        <Text style={{ fontSize: 18, paddingBottom: 16 }}>My Accounts</Text>
+        <View style={styles.accountCard}>
+          <Text style={{ fontSize: 16 }}>Account: {userAccounts[0].account}</Text>
+          <Text style={{ fontSize: 16 }}>Balance: {userAccounts[0].balance} {'\u20A6'}</Text>
+        </View>
       </View>
 
 
@@ -136,26 +138,26 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingBottom: 48,
   },
-  carouselContainer:{
+  carouselContainer: {
     paddingRight: 0,
-    paddingTop:16,
+    paddingTop: 16,
     height: '25%',
-    minWidth:256
+    minWidth: 256
   },
-  accountCard:{
-    paddingTop:16,
-    paddingLeft:16,
+  accountCard: {
+    paddingTop: 16,
+    paddingLeft: 16,
     height: 90,
-    width: "64%",
+    width: "75%",
     backgroundColor: "#f5f4f4",
 
 
     borderRadius: 4,
     shadowColor: '#7a7979',
-    shadowOffset: {width: 0, height: 0},
+    shadowOffset: { width: 0, height: 0 },
     shadowOpacity: 1,
-    shadowRadius: 8,
-    elevation: 5,
+    shadowRadius: 2,
+    elevation: 2,
   },
   servicesContainer: {},
   serviceButton: {
