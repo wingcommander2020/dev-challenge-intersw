@@ -23,15 +23,15 @@ export default function App() {
       </View>
     );
   }
-  //<Stack.Screen name="Login" component={LoginView} />
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Group>
+          <Stack.Screen name="Login" component={LoginView} />
           <Stack.Screen name="Main" component={MainView} />
         </Stack.Group>
-        <Stack.Group screenOptions={{ presentation: 'modal' }}>
-          <Stack.Screen name="menu" component={ModalScreen} />
+        <Stack.Group screenOptions={{ presentation: 'hannes' }}>
+          <Stack.Screen name="menu" component={MenuModal} />
 
         </Stack.Group>
 
