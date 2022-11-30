@@ -4,12 +4,9 @@ import {
   Text,
   View,
   Image,
-  TextInput,
   TouchableOpacity,
   Pressable,
-  ScrollView
 } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { users } from "../Users";
